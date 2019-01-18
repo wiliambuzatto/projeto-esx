@@ -2,8 +2,16 @@
 
 namespace ESX.Teste.Domain.Entities
 {
-    public class Marca : EntityBase<Marca>
+    public class Marca : EntityBase
     {
-        public string Nome { get; protected set; }
+        private Marca() { }
+
+        public Marca(Guid id, string nome)
+        {
+            Id = id;
+            Nome = nome;
+        }
+
+        public string Nome { get; set; }
     }
 }

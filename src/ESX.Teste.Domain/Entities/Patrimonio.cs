@@ -1,16 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ESX.Teste.Domain.Entities
 {
-    public class Patrimonio
+    public class Patrimonio : EntityBase
     {
-        public string Nome { get; protected set; }
-        public Guid MarcaId { get; protected set; }
-        public string Descricao { get; protected set; }
-        public Guid NumeroTombo { get; protected set; }
+        public Patrimonio(Guid id, string nome, string descricao, Guid marcaId, int numeroTombo)
+        {
+            Id = id;
+            Nome = nome;
+            Descricao = descricao;
+            MarcaId = marcaId;
+            NumeroTombo = numeroTombo;
+        }
 
-        public virtual Marca Marca { get; protected set; }
+        private Patrimonio() { }
+
+        public string Nome { get; set; }
+
+        public string Descricao { get; set; }
+
+        public Guid MarcaId { get; set; }
+
+        public int NumeroTombo { get; set; }
+
+        public virtual Marca Marca { get; set; }
     }
 }
