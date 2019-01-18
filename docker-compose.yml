@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  esx.teste.api:
+    image: ${DOCKER_REGISTRY-}esxtesteapi
+    build:
+      context: .
+      dockerfile: src/ESX.Teste.API/Dockerfile
