@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ESX.Teste.Application\ESX.Teste.Application.csproj" />
     <ProjectReference Include="..\ESX.Teste.Infra.Data\ESX.Teste.Infra.Data.csproj" />
   </ItemGroup>
 

@@ -3,6 +3,7 @@ using ESX.Teste.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using ESX.Teste.Infra.Data.Mappings;
 using Microsoft.Extensions.Configuration;
+using System;
 
 namespace ESX.Teste.Infra.Data.Context
 {
@@ -21,12 +22,12 @@ namespace ESX.Teste.Infra.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
+            //var config = new ConfigurationBuilder()
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
 
-            optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
         }
     }
 }

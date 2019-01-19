@@ -7,21 +7,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Services", "1 - Service
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", "{F025EFB6-F00F-49C0-8646-E667AB478986}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infra", "3 - Infra", "{5D59D5E0-5AE4-4DAC-B8A0-A6332BFDCDE2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{5D59D5E0-5AE4-4DAC-B8A0-A6332BFDCDE2}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.1 - CrossCutting", "3.1 - CrossCutting", "{40B97015-A706-4054-A40C-72C48388A167}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.1 - CrossCutting", "4.1 - CrossCutting", "{40B97015-A706-4054-A40C-72C48388A167}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.2 - Data", "3.2 - Data", "{F20D26B1-C5DE-496C-8411-D0C7B84FA5B7}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4.2 - Data", "4.2 - Data", "{F20D26B1-C5DE-496C-8411-D0C7B84FA5B7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESX.Teste.API", "src\ESX.Teste.API\ESX.Teste.API.csproj", "{5740EECE-824D-4FA2-8524-8C6FBFEBEE72}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESX.Teste.API", "src\ESX.Teste.API\ESX.Teste.API.csproj", "{5740EECE-824D-4FA2-8524-8C6FBFEBEE72}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{BDA7A197-EED1-4DBA-8815-B3A94B7E5A3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESX.Teste.Infra.Data", "src\ESX.Teste.Infra.Data\ESX.Teste.Infra.Data.csproj", "{B8A6396B-EBD8-48C1-9F5E-7B0DBDA240EA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESX.Teste.Infra.Data", "src\ESX.Teste.Infra.Data\ESX.Teste.Infra.Data.csproj", "{B8A6396B-EBD8-48C1-9F5E-7B0DBDA240EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESX.Teste.Domain", "src\ESX.Teste.Domain\ESX.Teste.Domain.csproj", "{0F2DB46F-C742-4D8A-8DC3-38B0A490C757}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESX.Teste.Domain", "src\ESX.Teste.Domain\ESX.Teste.Domain.csproj", "{0F2DB46F-C742-4D8A-8DC3-38B0A490C757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESX.Teste.Infra.CrossCutting.IoC", "src\ESX.Teste.Infra.CrossCutting.IoC\ESX.Teste.Infra.CrossCutting.IoC.csproj", "{7D6B5154-10AC-413A-806E-4DB924687E6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ESX.Teste.Infra.CrossCutting.IoC", "src\ESX.Teste.Infra.CrossCutting.IoC\ESX.Teste.Infra.CrossCutting.IoC.csproj", "{7D6B5154-10AC-413A-806E-4DB924687E6C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Application", "3 - Application", "{0DDE1CD7-AFEA-4F3F-84DF-A1CDC1F0A7C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESX.Teste.Application", "src\ESX.Teste.Application\ESX.Teste.Application.csproj", "{11FDDF18-1F8E-4342-BCD6-259E9C847AE5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -49,6 +53,10 @@ Global
 		{7D6B5154-10AC-413A-806E-4DB924687E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D6B5154-10AC-413A-806E-4DB924687E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D6B5154-10AC-413A-806E-4DB924687E6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11FDDF18-1F8E-4342-BCD6-259E9C847AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11FDDF18-1F8E-4342-BCD6-259E9C847AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11FDDF18-1F8E-4342-BCD6-259E9C847AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11FDDF18-1F8E-4342-BCD6-259E9C847AE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +68,7 @@ Global
 		{B8A6396B-EBD8-48C1-9F5E-7B0DBDA240EA} = {F20D26B1-C5DE-496C-8411-D0C7B84FA5B7}
 		{0F2DB46F-C742-4D8A-8DC3-38B0A490C757} = {F025EFB6-F00F-49C0-8646-E667AB478986}
 		{7D6B5154-10AC-413A-806E-4DB924687E6C} = {40B97015-A706-4054-A40C-72C48388A167}
+		{11FDDF18-1F8E-4342-BCD6-259E9C847AE5} = {0DDE1CD7-AFEA-4F3F-84DF-A1CDC1F0A7C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AFF4138C-382D-4DE0-9775-CE4975271F1E}

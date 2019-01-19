@@ -2,13 +2,13 @@
 
 namespace ESX.Teste.Domain.Entities
 {
-    public abstract class EntityBase
+    public abstract class EntityBase<T> where T : EntityBase<T>
     {
         public Guid Id { get; protected set; }
 
         public override bool Equals(object obj)
         {
-            var compareTo = obj as EntityBase;
+            var compareTo = obj as EntityBase<T>;
 
             if (ReferenceEquals(this, compareTo)) return true;
             if (ReferenceEquals(null, compareTo)) return false;
@@ -16,7 +16,7 @@ namespace ESX.Teste.Domain.Entities
             return Id.Equals(compareTo.Id);
         }
 
-        public static bool operator ==(EntityBase a, EntityBase b)
+        public static bool operator ==(EntityBase<T> a, EntityBase<T> b)
         {
             if (ReferenceEquals(a, null) && ReferenceEquals(b, null))
                 return true;
@@ -27,19 +27,19 @@ namespace ESX.Teste.Domain.Entities
             return a.Equals(b);
         }
 
-        public static bool operator !=(EntityBase a, EntityBase b)
+        public static bool operator !=(EntityBase<T> a, EntityBase<T> b)
         {
             return !(a == b);
         }
 
         public override int GetHashCode()
         {
-            return (GetType().GetHashCode() * 907) + Id.GetHashCode();
+            return base.GetHashCode() * 907 + Id.GetHashCode();
         }
 
         public override string ToString()
         {
-            return GetType().Name + " [Id=" + Id + "]";
+            return $"{GetType().Name} [Id = {Id}]";
         }
     }
 }
