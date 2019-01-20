@@ -10,6 +10,7 @@ namespace ESX.Teste.Application.AutoMapper
         {
             CreateMap<MarcaResponseViewModel, Marca>();
             CreateMap<MarcaRequestViewModel, Marca>();
+            CreateMap<MarcaUpdateViewModel, Marca>();
         }
     }
 }

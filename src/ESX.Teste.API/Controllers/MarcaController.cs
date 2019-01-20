@@ -5,7 +5,7 @@ using System;
 
 namespace ESX.Teste.API.Controllers
 {
-    [Route("api/")]
+    [Route("api/[controller]/")]
     [ApiController]
     public class MarcaController : ApiController
     {
@@ -17,26 +17,20 @@ namespace ESX.Teste.API.Controllers
         }
 
         [HttpGet]
-        [Route("marcas")]
         public IActionResult Get()
         {
             return Ok(_marcaAppService.GetAll());
         }
 
         [HttpGet]
-        [Route("marcas/{id}")]
+        [Route("{id}")]
         public IActionResult GetById(Guid id)
         {
-            var marca = _marcaAppService.GetById(id);
-
-            if (marca == null)
-                return NotFound();
-
-            return Ok(marca);
+            return ResponseOk(_marcaAppService.GetById(id));
         }
 
         [HttpGet]
-        [Route("marcas/{id}/patrimonios")]
+        [Route("{id}/patrimonios")]
         public IActionResult GetPatrimonios(Guid id)
         {
             //RETORNAR OS PATRIMÔNIOS
@@ -49,31 +43,24 @@ namespace ESX.Teste.API.Controllers
         }
 
         [HttpPost]
-        [Route("marcas")]
         public IActionResult Insert([FromBody] MarcaRequestViewModel viewmodel)
         {
             return ResponseOk(_marcaAppService.Add(viewmodel));
         }
 
         [HttpPut]
-        [Route("marca/{id}")]
-        public IActionResult Update(MarcaRequestViewModel viewmodel)
+        [Route("{id}")]
+        public IActionResult Update(Guid id, MarcaUpdateViewModel viewmodel)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(viewmodel);
-            }
-
-            _marcaAppService.Update(viewmodel);
-            return Ok(viewmodel);
+            return ResponseOk(_marcaAppService.Update(id, viewmodel));
         }
 
         [HttpDelete]
-        [Route("marca/{id}")]
+        [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
             _marcaAppService.Remove(id);
-            return Ok();
+            return ResponseOk();
         }
     }
 }

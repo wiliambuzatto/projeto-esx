@@ -6,12 +6,6 @@ namespace ESX.Teste.Domain.Entities
     {
         private Marca() { }
 
-        public Marca(Guid id, string nome)
-        {
-            Id = id;
-            Nome = nome;
-        }
-
         public string Nome { get; set; }
     }
 }

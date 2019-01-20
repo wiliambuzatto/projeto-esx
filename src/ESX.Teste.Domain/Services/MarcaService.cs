@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using ESX.Teste.Domain.Entities;
 using ESX.Teste.Domain.Interfaces;
 using ESX.Teste.Domain.Interfaces.Services;
@@ -12,6 +14,11 @@ namespace ESX.Teste.Domain.Services
         public MarcaService(IMarcaRepository repository) : base(repository)
         {
             _repository = repository;
+        }
+
+        public Task<List<Marca>> List()
+        {
+            return _repository.List();
         }
     }
 }

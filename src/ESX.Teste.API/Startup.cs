@@ -44,7 +44,7 @@ namespace ESX.Teste.API
 
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Programmers CRUD V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "ESX Teste");
                 c.RoutePrefix = string.Empty;
             });
 

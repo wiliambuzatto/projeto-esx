@@ -6,6 +6,7 @@ using ESX.Teste.Domain.Entities;
 using ESX.Teste.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ESX.Teste.Application.Services
 {
@@ -31,7 +32,7 @@ namespace ESX.Teste.Application.Services
 
         public IEnumerable<MarcaResponseViewModel> GetAll()
         {
-            return _marcaService.GetAll().ProjectTo<MarcaResponseViewModel>();
+            return _mapper.Map<IEnumerable<MarcaResponseViewModel>>(_marcaService.GetAll());
         }
 
         public MarcaResponseViewModel GetById(Guid id)
@@ -44,9 +45,10 @@ namespace ESX.Teste.Application.Services
             _marcaService.Remove(id);
         }
 
-        public MarcaResponseViewModel Update(MarcaRequestViewModel customerViewModel)
+        public MarcaResponseViewModel Update(Guid id,  MarcaUpdateViewModel viewmodel)
         {
-            var marca = _mapper.Map<Marca>(customerViewModel);
+            viewmodel.Id = id;
+            var marca = _mapper.Map<Marca>(viewmodel);
             _marcaService.Update(marca);
 
             return _mapper.Map<MarcaResponseViewModel>(marca);

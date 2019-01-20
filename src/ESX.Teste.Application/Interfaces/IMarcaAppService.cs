@@ -9,7 +9,7 @@ namespace ESX.Teste.Application.Interfaces
         MarcaResponseViewModel Add(MarcaRequestViewModel marcaviewModel);
         IEnumerable<MarcaResponseViewModel> GetAll();
         MarcaResponseViewModel GetById(Guid id);
-        MarcaResponseViewModel Update(MarcaRequestViewModel customerViewModel);
+        MarcaResponseViewModel Update(Guid id, MarcaUpdateViewModel marcaviewModel);
         void Remove(Guid id);
     }
 }
