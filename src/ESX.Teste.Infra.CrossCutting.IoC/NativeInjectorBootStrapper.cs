@@ -5,6 +5,8 @@ using ESX.Teste.Application.Interfaces;
 using ESX.Teste.Application.Services;
 using ESX.Teste.Domain.Interfaces;
 using ESX.Teste.Infra.Data.Repositories;
+using ESX.Teste.Domain.Services;
+using ESX.Teste.Domain.Interfaces.Services;
 
 namespace ESX.Teste.Infra.CrossCutting.IoC
 {
@@ -17,6 +19,10 @@ namespace ESX.Teste.Infra.CrossCutting.IoC
 
             // Application
             services.AddScoped<IMarcaAppService, MarcaAppService>();
+
+            // Domain
+            services.AddScoped<IMarcaService, MarcaService>();
+            //services.AddScoped<IPatrimonioService, PatrimonionService>();
 
             // Infra - Data
             services.AddScoped<IMarcaRepository, MarcaRepository>();

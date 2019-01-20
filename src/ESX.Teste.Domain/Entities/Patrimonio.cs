@@ -2,7 +2,7 @@
 
 namespace ESX.Teste.Domain.Entities
 {
-    public class Patrimonio : EntityBase
+    public class Patrimonio : EntityBase<Patrimonio>
     {
         public Patrimonio(Guid id, string nome, string descricao, Guid marcaId, int numeroTombo)
         {

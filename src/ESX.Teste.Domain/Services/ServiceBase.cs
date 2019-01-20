@@ -1,6 +1,8 @@
-﻿using ESX.Teste.Domain.Interfaces;
+﻿using ESX.Teste.Domain.Entities;
+using ESX.Teste.Domain.Interfaces;
+using ESX.Teste.Domain.Interfaces.Services;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace ESX.Teste.Domain.Services
 {
@@ -17,16 +19,6 @@ namespace ESX.Teste.Domain.Services
         {
             _repository.Add(obj);
             _repository.SaveChanges();
-        }
-
-        public virtual IEnumerable<TEntity> GetAll()
-        {
-            return _repository.GetAll();
-        }
-
-        public IEnumerable<TEntity> GetAll(int userId)
-        {
-            throw new System.NotImplementedException();
         }
 
         public virtual TEntity GetById(Guid id)
@@ -49,6 +41,11 @@ namespace ESX.Teste.Domain.Services
         public void Dispose()
         {
             _repository.Dispose();
+        }
+
+        public IQueryable<TEntity> GetAll()
+        {
+            return _repository.GetAll();
         }
     }
 }

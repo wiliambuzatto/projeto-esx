@@ -2,14 +2,13 @@
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace ESX.Teste.Application.ViewModels
+namespace ESX.Teste.Application.ViewModels.Marca
 {
-    public class MarcaViewModel
+    public class MarcaRequestViewModel
     {
         [Required(ErrorMessage = "O campo nome é obrigatório")]
-        [MinLength(2)]
-        [MaxLength(100)]
+        [MaxLength(100, ErrorMessage ="O campo nome deve conter no máximo {0} caracteres")]
         [DisplayName("Nome")]
         public string Nome { get; set; }
-    }
+    } 
 }

@@ -1,6 +1,6 @@
 ﻿using ESX.Teste.Domain.Entities;
 using System;
-using System.Collections.Generic;
+using System.Linq;
 
 namespace ESX.Teste.Domain.Interfaces.Services
 {
@@ -14,6 +14,6 @@ namespace ESX.Teste.Domain.Interfaces.Services
 
         TEntity GetById(Guid id);
 
-        IEnumerable<TEntity> GetAll();
+        IQueryable<TEntity> GetAll();
     }
 }

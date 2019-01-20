@@ -1,16 +1,15 @@
-﻿using ESX.Teste.Application.ViewModels;
+﻿using ESX.Teste.Application.ViewModels.Marca;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace ESX.Teste.Application.Interfaces
 {
     public interface IMarcaAppService : IDisposable
     {
-        void Add(MarcaViewModel marcaviewModel);
-        IEnumerable<MarcaViewModel> GetAll();
-        MarcaViewModel GetById(Guid id);
-        void Update(MarcaViewModel customerViewModel);
+        MarcaResponseViewModel Add(MarcaRequestViewModel marcaviewModel);
+        IEnumerable<MarcaResponseViewModel> GetAll();
+        MarcaResponseViewModel GetById(Guid id);
+        MarcaResponseViewModel Update(MarcaRequestViewModel customerViewModel);
         void Remove(Guid id);
     }
 }

@@ -2,7 +2,7 @@
 
 namespace ESX.Teste.Domain.Entities
 {
-    public class Marca : EntityBase
+    public class Marca : EntityBase<Marca>
     {
         private Marca() { }
 

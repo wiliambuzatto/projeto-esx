@@ -1,7 +1,7 @@
-﻿using ESX.Teste.Domain.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Linq;
+using ESX.Teste.Domain.Entities;
+using ESX.Teste.Domain.Interfaces;
+using ESX.Teste.Domain.Interfaces.Services;
 
 namespace ESX.Teste.Domain.Services
 {

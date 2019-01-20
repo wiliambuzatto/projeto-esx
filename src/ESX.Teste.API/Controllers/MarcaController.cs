@@ -1,5 +1,5 @@
 ﻿using ESX.Teste.Application.Interfaces;
-using ESX.Teste.Application.ViewModels;
+using ESX.Teste.Application.ViewModels.Marca;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -50,20 +50,14 @@ namespace ESX.Teste.API.Controllers
 
         [HttpPost]
         [Route("marcas")]
-        public IActionResult Insert([FromBody] MarcaViewModel viewmodel)
+        public IActionResult Insert([FromBody] MarcaRequestViewModel viewmodel)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(viewmodel);
-            }
-
-            _marcaAppService.Add(viewmodel);
-            return Ok(viewmodel);
+            return ResponseOk(_marcaAppService.Add(viewmodel));
         }
 
         [HttpPut]
         [Route("marca/{id}")]
-        public IActionResult Update(MarcaViewModel viewmodel)
+        public IActionResult Update(MarcaRequestViewModel viewmodel)
         {
             if (!ModelState.IsValid)
             {

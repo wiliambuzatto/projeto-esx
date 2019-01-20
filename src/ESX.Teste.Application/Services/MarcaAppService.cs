@@ -1,51 +1,55 @@
-﻿using System;
-using System.Collections.Generic;
-using AutoMapper;
+﻿using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using ESX.Teste.Application.Interfaces;
-using ESX.Teste.Application.ViewModels;
+using ESX.Teste.Application.ViewModels.Marca;
 using ESX.Teste.Domain.Entities;
-using ESX.Teste.Domain.Interfaces;
+using ESX.Teste.Domain.Interfaces.Services;
+using System;
+using System.Collections.Generic;
 
 namespace ESX.Teste.Application.Services
 {
     public class MarcaAppService : IMarcaAppService
     {
-        private readonly IMarcaRepository _marcaRepository;
+        private readonly IMarcaService _marcaService;
         private readonly IMapper _mapper;
 
         public MarcaAppService(IMapper mapper,
-                               IMarcaRepository marcaRepository)
+                               IMarcaService marcaService)
         {
             _mapper = mapper;
-            _marcaRepository = marcaRepository;
+            _marcaService = marcaService;
         }
 
-        public void Add(MarcaViewModel marcaviewModel)
+        public MarcaResponseViewModel Add(MarcaRequestViewModel marcaviewModel)
         {
             var marca = _mapper.Map<Marca>(marcaviewModel);
-            _marcaRepository.Add(marca);
+            _marcaService.Add(marca);
+
+            return _mapper.Map<MarcaResponseViewModel>(marca);
         }
 
-        public IEnumerable<MarcaViewModel> GetAll()
+        public IEnumerable<MarcaResponseViewModel> GetAll()
         {
-            return _marcaRepository.GetAll().ProjectTo<MarcaViewModel>();
+            return _marcaService.GetAll().ProjectTo<MarcaResponseViewModel>();
         }
 
-        public MarcaViewModel GetById(Guid id)
+        public MarcaResponseViewModel GetById(Guid id)
         {
-            return _mapper.Map<MarcaViewModel>(_marcaRepository.GetById(id));
+            return _mapper.Map<MarcaResponseViewModel>(_marcaService.GetById(id));
         }
 
         public void Remove(Guid id)
         {
-            _marcaRepository.Remove(id);
+            _marcaService.Remove(id);
         }
 
-        public void Update(MarcaViewModel customerViewModel)
+        public MarcaResponseViewModel Update(MarcaRequestViewModel customerViewModel)
         {
             var marca = _mapper.Map<Marca>(customerViewModel);
-            _marcaRepository.Update(marca);
+            _marcaService.Update(marca);
+
+            return _mapper.Map<MarcaResponseViewModel>(marca);
         }
 
         public void Dispose()
