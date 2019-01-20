@@ -19,7 +19,7 @@ namespace ESX.Teste.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok(_marcaAppService.GetAll());
+            return ResponseOk(_marcaAppService.GetAll());
         }
 
         [HttpGet]

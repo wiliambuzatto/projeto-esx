@@ -19,10 +19,11 @@ namespace ESX.Teste.Infra.CrossCutting.IoC
 
             // Application
             services.AddScoped<IMarcaAppService, MarcaAppService>();
+            services.AddScoped<IPatrimonioAppService, PatrimonioAppService>();
 
             // Domain
             services.AddScoped<IMarcaService, MarcaService>();
-            //services.AddScoped<IPatrimonioService, PatrimonionService>();
+            services.AddScoped<IPatrimonioService, PatrimonioService>();
 
             // Infra - Data
             services.AddScoped<IMarcaRepository, MarcaRepository>();

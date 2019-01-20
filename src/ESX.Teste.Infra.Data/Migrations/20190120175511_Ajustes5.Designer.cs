@@ -4,14 +4,16 @@ using ESX.Teste.Infra.Data.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace ESX.Teste.Infra.Data.Migrations
 {
     [DbContext(typeof(ESXTestContext))]
-    partial class ESXTestContextModelSnapshot : ModelSnapshot
+    [Migration("20190120175511_Ajustes5")]
+    partial class Ajustes5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -9,7 +9,7 @@ namespace ESX.Teste.Infra.Data.Mappings
         public void Configure(EntityTypeBuilder<Patrimonio> builder)
         {
             builder.Property(c => c.Id)
-                .HasColumnName("Id");
+                 .HasColumnName("Id");
 
             builder.Property(c => c.Nome)
                 .HasColumnType("varchar(100)")
@@ -23,8 +23,7 @@ namespace ESX.Teste.Infra.Data.Mappings
                 .HasColumnType("varchar(200)")
                 .HasMaxLength(200);
 
-            builder.Property(c => c.NumeroTombo)
-               .HasMaxLength(200);
+            builder.Property(f => f.NumeroTombo).ValueGeneratedOnAdd();
         }
     }
 }

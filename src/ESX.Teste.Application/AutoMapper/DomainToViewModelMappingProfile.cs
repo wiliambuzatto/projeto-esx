@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using ESX.Teste.Application.ViewModels.Marca;
+using ESX.Teste.Application.ViewModels.Patrimonio;
 using ESX.Teste.Domain.Entities;
 
 namespace ESX.Teste.Application.AutoMapper
@@ -10,6 +11,9 @@ namespace ESX.Teste.Application.AutoMapper
         {
             CreateMap<Marca, MarcaRequestViewModel>();
             CreateMap<Marca, MarcaResponseViewModel>();
+
+            CreateMap<Patrimonio, PatrimonioRequestAddViewModel>();
+            CreateMap<Patrimonio, PatrimonioResponseViewModel>();
         }
     }
 }

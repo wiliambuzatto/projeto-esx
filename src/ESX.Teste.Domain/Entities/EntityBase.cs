@@ -1,9 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ESX.Teste.Domain.Entities
 {
     public abstract class EntityBase<T> where T : EntityBase<T>
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public Guid Id { get; protected set; }
 
         public override bool Equals(object obj)

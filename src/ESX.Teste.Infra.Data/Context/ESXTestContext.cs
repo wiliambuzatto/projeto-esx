@@ -14,7 +14,7 @@ namespace ESX.Teste.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new PatrimonioMap());
+            modelBuilder.ApplyConfiguration(new MarcaMap());
             modelBuilder.ApplyConfiguration(new PatrimonioMap());
 
             base.OnModelCreating(modelBuilder);
@@ -22,11 +22,12 @@ namespace ESX.Teste.Infra.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //var config = new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetCurrentDirectory())
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
+            var config = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json")
+                .Build();
 
+            //optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
             optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
         }
     }

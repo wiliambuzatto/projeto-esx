@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ESX.Teste.Domain.Entities
+namespace ESX.Teste.Application.ViewModels.Patrimonio
 {
-    public class Patrimonio : EntityBase<Patrimonio>
+    public class PatrimonioResponseViewModel
     {
-        private Patrimonio() { }
+        public Guid Id { get; set; }
 
         public string Nome { get; set; }
 
@@ -13,7 +13,5 @@ namespace ESX.Teste.Domain.Entities
         public Guid MarcaId { get; set; }
 
         public int NumeroTombo { get; set; }
-
-        public virtual Marca Marca { get; set; }
     }
 }
