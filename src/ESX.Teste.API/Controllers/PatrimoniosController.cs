@@ -26,7 +26,12 @@ namespace ESX.Teste.API.Controllers
         [Route("{id}")]
         public IActionResult GetById(Guid id)
         {
-            return ResponseOk(_patrimonioAppService.GetById(id));
+            var patrimonio = _patrimonioAppService.GetById(id);
+
+            if (patrimonio == null)
+                return ResponseBadRequest("Patrimonio not found");
+
+            return ResponseOk(patrimonio);
         }
 
         [HttpPost]
@@ -46,6 +51,9 @@ namespace ESX.Teste.API.Controllers
         [Route("{id}")]
         public IActionResult Delete(Guid id)
         {
+            if (_patrimonioAppService.GetById(id) == null)
+                return ResponseBadRequest("Patrimonio not found");
+
             _patrimonioAppService.Remove(id); return ResponseOk();
         }
     }

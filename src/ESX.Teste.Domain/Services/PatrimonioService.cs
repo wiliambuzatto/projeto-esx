@@ -1,4 +1,6 @@
-﻿using ESX.Teste.Domain.Entities;
+﻿using System;
+using System.Linq;
+using ESX.Teste.Domain.Entities;
 using ESX.Teste.Domain.Interfaces;
 using ESX.Teste.Domain.Interfaces.Services;
 
@@ -11,6 +13,11 @@ namespace ESX.Teste.Domain.Services
         public PatrimonioService(IPatrimonioRepository repository) : base(repository)
         {
             _repository = repository;
+        }
+
+        public IQueryable<Patrimonio> GetByMarcaId(Guid marcaid)
+        {
+            return _repository.GetByMarcaId(marcaid);
         }
     }
 }

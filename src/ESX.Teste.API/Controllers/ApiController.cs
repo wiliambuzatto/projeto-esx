@@ -13,7 +13,7 @@ namespace ESX.Teste.API.Controllers
             });
         }
 
-        protected new IActionResult BadRequest(object result = null)
+        protected new IActionResult ResponseBadRequest(object result = null)
         {
             return BadRequest(new
             {

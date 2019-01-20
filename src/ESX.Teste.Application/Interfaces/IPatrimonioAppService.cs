@@ -12,5 +12,6 @@ namespace ESX.Teste.Application.Interfaces
         PatrimonioResponseViewModel GetById(Guid id);
         PatrimonioResponseViewModel Update(Guid id, PatrimonioRequestUpdateViewModel marcaviewModel);
         void Remove(Guid id);
+        IEnumerable<PatrimonioResponseViewModel> GetByMarcaId(Guid id);
     }
 }

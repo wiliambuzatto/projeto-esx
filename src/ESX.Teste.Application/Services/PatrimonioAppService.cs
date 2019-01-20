@@ -40,6 +40,11 @@ namespace ESX.Teste.Application.Services
             return _mapper.Map<PatrimonioResponseViewModel>(_patrimonioService.GetById(id));
         }
 
+        public IEnumerable<PatrimonioResponseViewModel> GetByMarcaId(Guid id)
+        {
+            return _mapper.Map<IEnumerable<PatrimonioResponseViewModel>>(_patrimonioService.GetByMarcaId(id));
+        }
+
         public void Remove(Guid id)
         {
             _patrimonioService.Remove(id);
