@@ -41,7 +41,6 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 - Escolher o projeto ESX.Teste.API como StartUp Project.
 - Criar um banco de dados vazio com qualquer nome.
 - Alterar os arquivos appsettings e adicionar a connectionstring do banco que foi criado. (src/ESX.Teste.API/appsettings.json e src/ESX.Teste.Infra.Data/appsettings.json).
-
 - Acessar o Package Manager Console, setar o projeto ``ESX.Teste.Infra.Data`` como default e executar o comando:
 
 ```
