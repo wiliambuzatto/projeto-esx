@@ -31,7 +31,7 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 
 - Considere que os pré-requisitos listados acima sejam atendidos.
 - Deve-se utilizar docker para execução de containers em linux.
-- Utilizar o banco de dados online já criado na Azure (connection já está no arquivo .env)
+- Colocar a connection string do banco de dados Azure no arquivo .env
 - Escolher o docker-compose como StartUp Project
 
 # Como executar o projeto ESX.Teste.API direto com banco de dados local
