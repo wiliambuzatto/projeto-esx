@@ -19,7 +19,7 @@ namespace ESX.Teste.API.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            return ResponseOk(Environment.MachineName);
+            return ResponseOk(_patrimonioAppService.GetAll());
         }
 
         [HttpGet]
