@@ -40,17 +40,8 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 - Considere que os pré-requisitos listados acima sejam atendidos.
 - Escolher o projeto ESX.Teste.API como StartUp Project.
 - Criar um banco de dados vazio com qualquer nome.
-- Alterar os arquivos appsettings e adicionar a connectionstring do banco que foi criado.
-- Descomentar trecho de código e comentar trecho de código no ESXTesteContext.cs
+- Alterar os arquivos appsettings e adicionar a connectionstring do banco que foi criado. (src/ESX.Teste.API/appsettings.json e src/ESX.Teste.Infra.Data/appsettings.json).
 
-```C#
-optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-```
-
-- Comentar o trecho que é usado somente quando o projeto é executado com o docker:
-```C#
-//optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
-```
 - Acessar o Package Manager Console, setar o projeto ``ESX.Teste.Infra.Data`` como default e executar o comando:
 
 ```
