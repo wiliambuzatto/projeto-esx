@@ -27,7 +27,11 @@ namespace ESX.Teste.Infra.Data.Context
                 .AddJsonFile("appsettings.json")
                 .Build();
 
+
+            //Descomentar esse código para executar o projeto sem Docker
             //optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
+
+            //Código utilizado ao executar o projeto usando docker, comentar quando for executar local
             optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
         }
     }
