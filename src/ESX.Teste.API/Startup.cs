@@ -63,7 +63,7 @@ namespace ESX.Teste.API
 
         private void RegisterServices(IServiceCollection services)
         {
-            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
+            BootStrapper.RegisterServices(services, Configuration);
         }
     }
 }

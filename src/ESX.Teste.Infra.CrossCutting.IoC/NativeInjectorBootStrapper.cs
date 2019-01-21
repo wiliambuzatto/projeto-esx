@@ -13,7 +13,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace ESX.Teste.Infra.CrossCutting.IoC
 {
-    public class NativeInjectorBootStrapper
+    public class BootStrapper
     {
         public static void RegisterServices(IServiceCollection services, IConfiguration configuration)
         {
