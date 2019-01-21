@@ -8,12 +8,12 @@ namespace ESX.Teste.API.Controllers
 {
     [Route("api/[controller]/")]
     [ApiController]
-    public class MarcaController : ApiController
+    public class MarcasController : ApiController
     {
         private readonly IMarcaAppService _marcaAppService;
         private readonly IPatrimonioAppService _patrimonioAppService;
 
-        public MarcaController(IMarcaAppService marcaAppService,
+        public MarcasController(IMarcaAppService marcaAppService,
                                IPatrimonioAppService patrimonioAppService)
         {
             _marcaAppService = marcaAppService;
@@ -30,12 +30,12 @@ namespace ESX.Teste.API.Controllers
         [Route("{id}")]
         public IActionResult GetById(Guid id)
         {
-            var patrimonio = _patrimonioAppService.GetById(id);
+            var marca = _marcaAppService.GetById(id);
 
-            if (patrimonio == null)
+            if (marca == null)
                 return ResponseBadRequest("Marca not found");
 
-            return ResponseOk(_marcaAppService.GetById(id));
+            return ResponseOk(marca);
         }
 
         [HttpGet]
