@@ -54,6 +54,9 @@ Update-Database
 - A aplicação foi hospedada no Azure WebApp for Container 
 - URL: https://esxteste.azurewebsites.net
 
+- A aplicação foi hospedada no WebApp normal
+- URL: https://esxteste.azurewebsites.net
+
 
 ## Serviços da Azure Utilizados
  - Azure Container Registry (armazenamento e gerenciamento da imagem)
@@ -61,6 +64,17 @@ Update-Database
  - WebApp for Containers (Serviço para execução de aplicativos em container, escalável de forma manual ou automática)
  - Deploy automatizado junto ao Azure Container Registry, assim que uma imagem nova é enviada.
 
+## Health Checks
+
+URL de Health Checks: https://esxtesteweb.azurewebsites.net/healthchecks-ui
+
+ <img src="https://esxtestestorage.blob.core.windows.net/esxteste/healthcheck.png?sv=2018-03-28&ss=bqtf&srt=sco&sp=rwdlacup&se=2019-01-22T07:24:41Z&sig=e31eML136J2nT%2FtSCf1B6K0%2FXTVFIt01rcalmiNBA7g%3D&_=1548113106317" alt="Health Check"> 
+
+
+## Implementações futuras
+- Health checks executando como imagem docker
+- Testes unitários
+- Retornos padrão RFC 7807 Problema Details
 
 
 
