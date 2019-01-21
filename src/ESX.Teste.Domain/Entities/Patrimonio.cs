@@ -13,5 +13,7 @@ namespace ESX.Teste.Domain.Entities
         public Guid MarcaId { get; set; }
 
         public int NumeroTombo { get; set; }
+
+        public virtual Marca Marca { get; set; }
     }
 }
