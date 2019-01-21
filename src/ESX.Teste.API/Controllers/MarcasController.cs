@@ -1,5 +1,4 @@
-﻿using ESX.Teste.Application.Configurations;
-using ESX.Teste.Application.Interfaces;
+﻿using ESX.Teste.Application.Interfaces;
 using ESX.Teste.Application.ViewModels.Marca;
 using Microsoft.AspNetCore.Mvc;
 using System;

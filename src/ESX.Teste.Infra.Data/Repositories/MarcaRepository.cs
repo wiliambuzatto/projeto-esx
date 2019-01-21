@@ -16,6 +16,11 @@ namespace ESX.Teste.Infra.Data.Repositories
 
         }
 
+        public Task<bool> IsUp()
+        {
+            return Task.FromResult(true);
+        }
+
         public Task<List<Marca>> List()
         {
             var list = Db.Set<Marca>().AsNoTracking().ToList();

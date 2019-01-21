@@ -1,6 +1,4 @@
-﻿using ESX.Teste.Application.Configurations;
-using System;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ESX.Teste.Application.ViewModels.Marca
 {

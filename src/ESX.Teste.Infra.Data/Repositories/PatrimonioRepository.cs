@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using ESX.Teste.Domain.Entities;
 using ESX.Teste.Domain.Interfaces;
 using ESX.Teste.Infra.Data.Context;
@@ -17,6 +18,11 @@ namespace ESX.Teste.Infra.Data.Repositories
         public IQueryable<Patrimonio> GetByMarcaId(Guid marcaid)
         {
             return DbSet.Where(x => x.MarcaId == marcaid);
+        }
+
+        public Task<bool> IsUp()
+        {
+            return Task.FromResult(true);
         }
     }
 }

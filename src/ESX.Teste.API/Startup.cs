@@ -1,11 +1,18 @@
 ﻿using ESX.Teste.API.Configurations;
+using ESX.Teste.Application.HealthCheck;
 using ESX.Teste.Infra.CrossCutting.IoC;
+using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Swashbuckle.AspNetCore.Swagger;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace ESX.Teste.API
 {
@@ -21,6 +28,11 @@ namespace ESX.Teste.API
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddHealthChecksUI();
+            services.AddHealthChecks()
+                .AddCheck<MyHealthCheck>("healthchecks-api")
+                .AddSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+
             services.AddCors();
             services.AddAutoMapperSetup();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
@@ -35,6 +47,14 @@ namespace ESX.Teste.API
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
+            app.UseHealthChecks("/healthz", new HealthCheckOptions()
+            {
+                Predicate = _ => true,
+                ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+            })
+           .UseHealthChecksUI();
+
             app.UseCors(option =>
                 option.AllowAnyOrigin()
                 .AllowAnyMethod()

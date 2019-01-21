@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using System.Threading.Tasks;
 using ESX.Teste.Domain.Entities;
 using ESX.Teste.Domain.Interfaces;
 using ESX.Teste.Domain.Interfaces.Services;
@@ -18,6 +19,11 @@ namespace ESX.Teste.Domain.Services
         public IQueryable<Patrimonio> GetByMarcaId(Guid marcaid)
         {
             return _repository.GetByMarcaId(marcaid);
+        }
+
+        public Task<bool> IsUp()
+        {
+            return _repository.IsUp();
         }
     }
 }

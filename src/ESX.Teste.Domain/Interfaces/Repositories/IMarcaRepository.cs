@@ -7,5 +7,6 @@ namespace ESX.Teste.Domain.Interfaces
     public interface IMarcaRepository : IRepository<Marca>
     {
         Task<List<Marca>> List();
+        Task<bool> IsUp();
     }
 }

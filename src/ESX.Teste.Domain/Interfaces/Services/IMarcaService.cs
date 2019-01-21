@@ -7,5 +7,6 @@ namespace ESX.Teste.Domain.Interfaces.Services
     public interface IMarcaService : IServiceBase<Marca>
     {
         Task<List<Marca>> List();
+        Task<bool> IsUp();
     } 
 }

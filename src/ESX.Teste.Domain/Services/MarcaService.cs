@@ -16,6 +16,11 @@ namespace ESX.Teste.Domain.Services
             _repository = repository;
         }
 
+        public Task<bool> IsUp()
+        {
+            return _repository.IsUp();
+        }
+
         public Task<List<Marca>> List()
         {
             return _repository.List();

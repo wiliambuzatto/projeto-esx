@@ -3,7 +3,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
-namespace ESX.Teste.Application.Configurations
+namespace ESX.Teste.Application
 {
     public class MarcaIsUniqueAttribute : ValidationAttribute
     {
