@@ -6,21 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
-using System.IO;
 
 namespace ESX.Teste.API
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IConfiguration config)
         {
-            var builder = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true);
-
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
+            Configuration = config;
         }
 
         public IConfiguration Configuration { get; }
@@ -68,9 +61,10 @@ namespace ESX.Teste.API
             app.UseMvc();
         }
 
-        private static void RegisterServices(IServiceCollection services)
+        private void RegisterServices(IServiceCollection services)
         {
-            NativeInjectorBootStrapper.RegisterServices(services);
+            NativeInjectorBootStrapper.RegisterServices(services, Configuration);
         }
     }
 }
+

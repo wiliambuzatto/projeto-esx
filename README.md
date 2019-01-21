@@ -31,6 +31,7 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 
 - Considere que os pré-requisitos listados acima sejam atendidos.
 - Deve-se utilizar docker para execução de containers em linux.
+- Enviar o IP para liberação no firewall do banco na Azure.
 - Colocar a connection string do banco de dados Azure no arquivo .env
 - Escolher o docker-compose como StartUp Project
 
@@ -57,6 +58,19 @@ Update-Database
 ```
 
 - Pronto, o projeto está pronto para ser executado.
+
+# Hospedagem
+
+- A aplicação foi hospedada no Azure WebApp for Container 
+- URL: https://esxteste.azurewebsites.net
+
+
+## Serviços da Azure Utilizados
+ - Azure Container Registry (armazenamento e gerenciamento da imagem)
+ - SQL Server (PaaS - Platform-as-a-Service)
+ - WebApp for Containers (Serviço para execução de aplicativos em container, escalável de forma manual ou automática)
+ - Deploy automatizado junto ao Azure Container Registry, assim que uma imagem nova é enviada.
+
 
 
 

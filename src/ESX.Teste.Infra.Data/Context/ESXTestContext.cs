@@ -1,14 +1,15 @@
-﻿using System.IO;
-using ESX.Teste.Domain.Entities;
+﻿using ESX.Teste.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using ESX.Teste.Infra.Data.Mappings;
-using Microsoft.Extensions.Configuration;
-using System;
 
 namespace ESX.Teste.Infra.Data.Context
 {
     public class ESXTestContext : DbContext
     {
+        public ESXTestContext(DbContextOptions<ESXTestContext> options) : base(options)
+        {
+        }
+
         public DbSet<Patrimonio> Patrimonios { get; set; }
         public DbSet<Marca> Marcas { get; set; }
 
@@ -22,17 +23,7 @@ namespace ESX.Teste.Infra.Data.Context
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var config = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
-                .AddJsonFile("appsettings.json")
-                .Build();
-
-
-            //Descomentar esse código para executar o projeto sem Docker
-            //optionsBuilder.UseSqlServer(config.GetConnectionString("DefaultConnection"));
-
-            //Código utilizado ao executar o projeto usando docker, comentar quando for executar local
-            optionsBuilder.UseSqlServer(Environment.GetEnvironmentVariable("ConnectionString"));
+           
         }
     }
 }
