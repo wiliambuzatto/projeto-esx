@@ -30,7 +30,7 @@ namespace ESX.Teste.API.Controllers
             var patrimonio = _patrimonioAppService.GetById(id);
 
             if (patrimonio == null)
-                return ResponseBadRequest("Patrimonio not found");
+                return NotFound("Patrimonio not found");
 
             return ResponseOk(patrimonio);
         }
@@ -53,7 +53,7 @@ namespace ESX.Teste.API.Controllers
         public IActionResult Delete(Guid id)
         {
             if (_patrimonioAppService.GetById(id) == null)
-                return ResponseBadRequest("Patrimonio not found");
+                return NotFound("Patrimonio not found");
 
             _patrimonioAppService.Remove(id); return ResponseOk();
         }
