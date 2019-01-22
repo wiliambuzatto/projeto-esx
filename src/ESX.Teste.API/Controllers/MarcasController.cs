@@ -32,7 +32,7 @@ namespace ESX.Teste.API.Controllers
             var marca = _marcaAppService.GetById(id);
 
             if (marca == null)
-                return ResponseBadRequest("Marca not found");
+                return NotFound("Marca not found");
 
             return ResponseOk(marca);
         }
@@ -41,6 +41,11 @@ namespace ESX.Teste.API.Controllers
         [Route("{id}/patrimonios")]
         public IActionResult GetPatrimonios(Guid id)
         {
+            var marca = _marcaAppService.GetById(id);
+
+            if (marca == null)
+                return NotFound("Marca not found");
+
             return ResponseOk(_patrimonioAppService.GetByMarcaId(id));
         }
 
