@@ -1,4 +1,5 @@
-﻿using ESX.Teste.Application.Interfaces;
+﻿using ESX.Teste.Application;
+using ESX.Teste.Application.Interfaces;
 using ESX.Teste.Application.ViewModels.Patrimonio;
 using Microsoft.AspNetCore.Mvc;
 using System;
