@@ -3,7 +3,7 @@ ESX Teste
 
 O projeto ESX Teste é um projeto realizado para teste de conhecimento para a empresa ESX.
 
-## Pré-requisitos para execução do projeto:
+## Pré-requisitos para execução do projeto
 - Visual Studio 2017 versão 15.9 ou posterior
 - .NET Core SDK 2.2
 - .NET Core Runtime 2.2
@@ -21,9 +21,9 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 - Banco de dados SQL Server
 - Docker
 - AspNetCore Diagnostics HealthChecks
-- RFC 7807 Problema Details
+- RFC 7807 Problem Details
 
-# Arquitetura:
+# Arquitetura
 
 - Aplicação de conceitos de separação de responsabiidades, SOLID e Clean Code
 - Domain Driven Design (Layers and Domain Model Pattern)
