@@ -14,6 +14,6 @@ namespace ESX.Teste.Application.ViewModels.Patrimonio
         public string Descricao { get; set; }
 
         [Required]
-        public Guid MarcaId { get; set; }
+        public Guid? MarcaId { get; set; }
     }
 }
