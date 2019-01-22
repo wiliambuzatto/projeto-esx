@@ -21,7 +21,7 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 - Banco de dados SQL Server
 - Docker
 - AspNetCore Diagnostics HealthChecks
-- RFC 7807 Problema Details
+- RFC 7807 Problem Details
 
 # Arquitetura:
 
