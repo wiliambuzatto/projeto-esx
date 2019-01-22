@@ -70,9 +70,6 @@ namespace ESX.Teste.API.Controllers
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Update(Guid id, MarcaUpdateViewModel viewmodel)
         {
-            if (_marcaAppService.GetById(id) == null)
-                return NotFound("Marca not found");
-
             return ResponseOk(_marcaAppService.Update(id, viewmodel));
         }
 
