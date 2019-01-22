@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+
+[assembly: ApiConventionType(typeof(DefaultApiConventions))]
 
 namespace ESX.Teste.API
 {

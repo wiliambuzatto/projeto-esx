@@ -20,12 +20,15 @@ O projeto ESX Teste é um projeto realizado para teste de conhecimento para a em
 - Microsoft Dependency Injection
 - Banco de dados SQL Server
 - Docker
+- AspNetCore Diagnostics HealthChecks
+- RFC 7807 Problema Details
 
 # Arquitetura:
 
 - Aplicação de conceitos de separação de responsabiidades, SOLID e Clean Code
 - Domain Driven Design (Layers and Domain Model Pattern)
 - Repositórios e repositório genérico
+- Problem Details
 
 # Como executar o projeto usando docker e banco de dados SQL Server da Azure
 
@@ -55,7 +58,7 @@ Update-Database
 - URL: https://esxteste.azurewebsites.net
 
 - A aplicação foi hospedada no WebApp normal
-- URL: https://esxteste.azurewebsites.net
+- URL: https://esxtesteweb.azurewebsites.net
 
 
 ## Serviços da Azure Utilizados
@@ -74,8 +77,4 @@ URL de Health Checks: https://esxtesteweb.azurewebsites.net/healthchecks-ui
 ## Implementações futuras
 - Health checks executando como imagem docker
 - Testes unitários
-- Retornos padrão RFC 7807 Problema Details
-
-
-
-
+- Documentar controller patrimônio

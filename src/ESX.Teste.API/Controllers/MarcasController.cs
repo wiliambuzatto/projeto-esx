@@ -1,7 +1,10 @@
 ﻿using ESX.Teste.Application.Interfaces;
 using ESX.Teste.Application.ViewModels.Marca;
+using ESX.Teste.Application.ViewModels.Patrimonio;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
 
 namespace ESX.Teste.API.Controllers
 {
@@ -20,13 +23,15 @@ namespace ESX.Teste.API.Controllers
         }
 
         [HttpGet]
+        [ProducesResponseType(typeof(OKResultCustom<List<MarcaResponseViewModel>>), StatusCodes.Status200OK)]
         public IActionResult Get()
         {
             return ResponseOk(_marcaAppService.GetAll());
         }
 
-        [HttpGet]
-        [Route("{id}")]
+        [HttpGet("{id}")]
+        [ProducesResponseType(typeof(OKResultCustom<MarcaResponseViewModel>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetById(Guid id)
         {
             var marca = _marcaAppService.GetById(id);
@@ -37,8 +42,9 @@ namespace ESX.Teste.API.Controllers
             return ResponseOk(marca);
         }
 
-        [HttpGet]
-        [Route("{id}/patrimonios")]
+        [HttpGet("{id}/patrimonios")]
+        [ProducesResponseType(typeof(OKResultCustom<List<PatrimonioResponseViewModel>>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetPatrimonios(Guid id)
         {
             var marca = _marcaAppService.GetById(id);
@@ -50,6 +56,8 @@ namespace ESX.Teste.API.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
         public IActionResult Insert([FromBody] MarcaRequestViewModel viewmodel)
         {
             return ResponseOk(_marcaAppService.Add(viewmodel));
@@ -57,17 +65,25 @@ namespace ESX.Teste.API.Controllers
 
         [HttpPut]
         [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Update(Guid id, MarcaUpdateViewModel viewmodel)
         {
+            if (_marcaAppService.GetById(id) == null)
+                return NotFound("Marca not found");
+
             return ResponseOk(_marcaAppService.Update(id, viewmodel));
         }
 
         [HttpDelete]
         [Route("{id}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult Delete(Guid id)
         {
             if (_marcaAppService.GetById(id) == null)
-                return ResponseBadRequest("Marca not found");
+                return NotFound("Marca not found");
 
             _marcaAppService.Remove(id);
             return ResponseOk();
